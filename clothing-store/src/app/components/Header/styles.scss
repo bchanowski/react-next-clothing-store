@@ -1,0 +1,13 @@
+@import "./../../globals.scss";
+
+.header-container {
+  height: 3rem;
+  background-color: $primary-color;
+  color: $secondary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: $font-size-small;
+  cursor: pointer;
+}
