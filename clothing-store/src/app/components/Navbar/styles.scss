@@ -1,8 +1,10 @@
 @import "./../../globals.scss";
+
 .icon {
   color: $primary-color;
   cursor: pointer;
 }
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -11,15 +13,28 @@
   font-size: $font-size-normal;
   margin: 0px;
 }
+
 .title {
   text-decoration: none;
+  font-weight: 700;
 }
-.mobile-menu-text {
-  color: $secondary-color;
+
+.navbar-text {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 500;
   padding: 1rem;
+  color: $primary-color;
+}
+
+.mobile-text {
+  color: white;
+}
+
+.navbar-options {
+  @media screen and (max-width: 780px) {
+    display: none;
+  }
 }
 
 .mobile-menu-container {
@@ -34,4 +49,11 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
+}
+
+.mobile-menu {
+  color: $secondary-color;
+  @media screen and (min-width: 780px) {
+    display: none;
+  }
 }

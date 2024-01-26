@@ -5,19 +5,13 @@ import { GrClose } from "react-icons/gr";
 import "./styles.scss";
 import { useState } from "react";
 import Link from "next/link";
-
-const links = [
-  { id: 1, title: "Homepage", url: "/" },
-  { id: 2, title: "Products", url: "/products" },
-  { id: 3, title: "Contact", url: "/" },
-  { id: 4, title: "Cart (3)", url: "/cart" },
-];
+import { links } from "./data";
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   const user = false;
   return (
-    <div>
+    <>
       {!open ? (
         <BiMenuAltLeft className="icon" onClick={() => setOpen(true)} />
       ) : (
@@ -27,7 +21,7 @@ const MobileMenu = () => {
         <div className="mobile-menu-container">
           {links.map((item) => (
             <Link
-              className="mobile-menu-text"
+              className="navbar-text mobile-text"
               href={item.url}
               key={item.id}
               onClick={() => setOpen(false)}
@@ -38,7 +32,7 @@ const MobileMenu = () => {
           {!user ? (
             <Link
               href="/login"
-              className="mobile-menu-text"
+              className="navbar-text"
               onClick={() => setOpen(false)}
             >
               Login
@@ -46,7 +40,7 @@ const MobileMenu = () => {
           ) : (
             <Link
               href="/orders"
-              className="mobile-menu-text"
+              className="navbar-text"
               onClick={() => setOpen(false)}
             >
               Orders
@@ -54,7 +48,7 @@ const MobileMenu = () => {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

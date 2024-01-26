@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
+import { links } from "./data";
 
 const Navbar = () => {
   return (
@@ -9,7 +10,14 @@ const Navbar = () => {
           CLOTHEE
         </Link>
       </div>
-      <div>
+      <div className="navbar-options">
+        {links.map((item) => (
+          <Link className="navbar-text" href={item.url} key={item.id}>
+            {item.title}
+          </Link>
+        ))}
+      </div>
+      <div className="mobile-menu">
         <MobileMenu />
       </div>
     </div>
